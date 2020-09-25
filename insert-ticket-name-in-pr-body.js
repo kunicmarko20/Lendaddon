@@ -1,6 +1,11 @@
 main();
 
 function main() {
+    const body = document.querySelector('textarea[name="pull_request[body]"]');
+    if (body === null) {
+        return;
+    }
+
     const branchName = document.querySelectorAll('summary.branch span')[1].title;
     const ticketNameArray = branchName.match(/CARD-[0-9]{4,}/gi);
 
@@ -8,11 +13,5 @@ function main() {
         return;
     }
 
-    const textarea = document.querySelector('textarea[name="pull_request[body]"]');
-
-    if (textarea === null) {
-        return;
-    }
-
-    textarea.value = textarea.value.replace("CARD-NUMBER", ticketNameArray[0]);
+    body.value = body.value.replace("CARD-NUMBER", ticketNameArray[0]);
 }
