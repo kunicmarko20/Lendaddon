@@ -3,17 +3,21 @@
   "version": "0.1",
   "description": "Lendaddon, because automation is the future.",
   "manifest_version": 2,
+  "icons": {
+    "16": "logo.png"
+  },
   "content_scripts": [
     {
-    "js": ["insert-ticket-name-in-pr-body.js"],
-    "matches": ["https://github.com/*"]
-    },
-    {
-      "js": ["release-button.js"],
+      "js": ["releaseButton.js"],
+      "css": ["ReleaseButton.css"],
       "matches": ["https://github.com/*"]
     },
     {
-      "js": ["release-page.js"],
+      "js": ["releasePage.js"],
+      "matches": ["https://github.com/*"]
+    },
+    {
+      "js": ["replaceTicketNumber.js"],
       "matches": ["https://github.com/*"]
     }
   ]
