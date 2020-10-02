@@ -33,14 +33,14 @@ const options = {
       'src',
       'content',
       'ReleasePage',
-      'index.js'
+      'index.jsx'
     ),
     replaceTicketNumber: path.join(
       __dirname,
       'src',
       'content',
       'ReplaceTicketNumber',
-      'index.js'
+      'index.jsx'
     ),
   },
   output: {
