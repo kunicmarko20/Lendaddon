@@ -2,9 +2,11 @@
 /node_modules
 
 # production
-/public/logo.png
+/public
 !/public/manifest.json
-!/public/logo.png
+!/public/icon16.png
+!/public/icon48.png
+!/public/icon128.png
 
 # misc
 .DS_Store

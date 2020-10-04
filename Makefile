@@ -11,4 +11,7 @@ build.prod: install
 	$(YARN) build:prod
 
 prettier: install
-	$(YARN) prettier
+	$(YARN) prettier --write 'src/**/*'
+
+run:
+	$(YARN) $(CMD)

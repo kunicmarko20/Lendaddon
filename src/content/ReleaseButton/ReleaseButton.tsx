@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ReleaseButton extends Component {
+class ReleaseButton extends Component<any, any> {
   render() {
     return (
       <a

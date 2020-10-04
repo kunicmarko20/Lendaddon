@@ -20,27 +20,27 @@ const fileExtensions = [
 
 const options = {
   entry: {
-    options: path.join(__dirname, 'src', 'options', 'index.jsx'),
+    options: path.join(__dirname, 'src', 'options', 'index.tsx'),
     releaseButton: path.join(
       __dirname,
       'src',
       'content',
       'ReleaseButton',
-      'index.jsx'
+      'index.tsx'
     ),
     releasePage: path.join(
       __dirname,
       'src',
       'content',
       'ReleasePage',
-      'index.jsx'
+      'index.tsx'
     ),
     replaceTicketNumber: path.join(
       __dirname,
       'src',
       'content',
       'ReplaceTicketNumber',
-      'index.jsx'
+      'index.tsx'
     ),
   },
   output: {
@@ -76,18 +76,22 @@ const options = {
         loader: 'babel-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader',
+      },
     ],
   },
   resolve: {
     extensions: fileExtensions
       .map((extension) => '.' + extension)
-      .concat(['.jsx', '.js', '.css']),
+      .concat(['.jsx', '.js', '.css', '.ts', '.tsx']),
   },
   plugins: [
     new webpack.ProgressPlugin(),
     // clean the build folder
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ['!logo.png', '!manifest.json'],
+      cleanOnceBeforeBuildPatterns: ['!icon16.png', '!manifest.json'],
     }),
     // expose and write the allowed env vars on the compiled bundle
     new webpack.EnvironmentPlugin(['NODE_ENV']),
