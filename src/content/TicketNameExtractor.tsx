@@ -1,5 +1,5 @@
 class TicketNameExtractor {
-  private readonly TICKET_IN_STRING_PATTERN = /TEST-[0-9]+/gi;
+  private readonly TICKET_IN_STRING_PATTERN = /CARD-[0-9]+/gi;
 
   public fromString(string: string): string {
     const ticketNameArray: string[] | null = string.match(

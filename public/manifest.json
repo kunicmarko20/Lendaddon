@@ -3,6 +3,11 @@
   "version": "0.1",
   "description": "Lendaddon, because automation is the future.",
   "manifest_version": 2,
+  "applications": {
+    "gecko": {
+      "id": "lendaddon@kunicmarko20"
+    }
+  },
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
