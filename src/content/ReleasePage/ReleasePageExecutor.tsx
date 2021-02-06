@@ -3,7 +3,7 @@ import ElementFinder from '../finder/ElementFinder';
 import CommitMessagesToTicketsTransformer from './CommitMessagesToTicketsTransformer';
 
 class ReleasePageExecutor implements SupportsExecutor {
-  private readonly OPEN_RELEASE_PULL_REQUEST_URL_PATTERN = /github\.com\/[A-z0-9._-]+\/[A-z0-9._-]+\/compare\/master\.\.\.development\?quick_pull=1$/gi;
+  private readonly OPEN_RELEASE_PULL_REQUEST_URL_PATTERN = /^https:\/\/github\.com\/[A-z0-9._-]+\/[A-z0-9._-]+\/compare\/master\.\.\.development/gi;
 
   private elementFinder: ElementFinder;
   private commitMessagesToTicketsTransformer: CommitMessagesToTicketsTransformer;
@@ -23,7 +23,7 @@ class ReleasePageExecutor implements SupportsExecutor {
       this.elementFinder.pullRequest().commitMessages()
     );
 
-    title.value = tickets.join(' ');
+    title.value = 'Release ' + tickets.join(' ');
     body.value = tickets.join('\n');
   }
 
