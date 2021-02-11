@@ -6,7 +6,7 @@ class TicketNameExtractor {
       this.TICKET_IN_STRING_PATTERN
     );
 
-    if (!Array.isArray(ticketNameArray) || ticketNameArray.length !== 1) {
+    if (!Array.isArray(ticketNameArray) || ticketNameArray.length === 0) {
       throw 'Ticket name not found.';
     }
 
