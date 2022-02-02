@@ -21,7 +21,7 @@ class PullRequestElementFinder {
 
   public commitMessages(): NodeListOf<HTMLElement> {
     return document.querySelectorAll(
-      '#commits_bucket code > a[data-pjax]:nth-child(1)'
+      '#commits_bucket a.issue-link:nth-child(2)'
     );
   }
 
